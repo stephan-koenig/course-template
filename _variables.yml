@@ -1,0 +1,39 @@
+course:
+  code: "<code>"
+  title: "<title>"
+  full-title: "<full-title>"
+  term: "<term>"
+  term-end-date: "<term-end-da"
+  time: "<days>, <start-time>--<end-time>"
+  location: >
+    <building-name> (<ubc-building-code>,
+    [Wayfinding at UBC](https://maps.ubc.ca/?code=<wayfinding-code>),
+    [Google Maps](<link>)), Rm <room-number>
+  website: "<link>"
+  repo: "<link>"
+  lms: "<link>"
+  prairielearn: "<link>"
+instructor:
+  name: "<full-name>"
+  pronouns: "<pronouns>"
+software:
+  bash: "5.3.3(1)"
+  bash-year: "2025"
+  brew: "4.6.11"
+  git: "2.51.0"
+  macos: "Tahoe 16.0"
+  marimo: "0.16.0"
+  python: "3.13.6"
+  uv: "0.8.18"
+  windows: "24H2 (build 26100.6584)"
+  zoom: "6.6.0 (64511)"
+icon:
+  advice: "{{< iconify fa6-solid comments >}}"
+  building: "{{< iconify fa6-solid building >}}"
+  computer-activity: "{{< iconify fa6-solid laptop-code >}}"
+  lms: "{{< iconify simple-icons:canvas >}}"
+  mail: "{{< iconify fa6-solid envelope >}}"
+  resource: "{{< iconify fa6-solid bookmark >}}"
+  task: "{{< iconify fa6-solid list-check >}}"
+  time: "{{< iconify fa6-solid clock >}}"
+  video-activity: "{{< iconify fa6-solid circle-play >}}"
