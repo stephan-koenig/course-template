@@ -1,4 +1,0 @@
----
-title: "{{< var icon.video-activity >}} Pre-activity: Example"
-subtitle: "Due: Jan 7, 2026"
----

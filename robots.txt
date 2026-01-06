@@ -1,0 +1,1 @@
+Sitemap: https://<course-url>/sitemap.xml
