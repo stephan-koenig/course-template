@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Announcements – EXAM 100: The example course</title>
+<title>Announcements – CPSC XXX: A course template</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,9 +135,9 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles/styles.css">
-<link rel="alternate" type="application/rss+xml" title="EXAM 100: The example course" href="announcements.xml" data-external="1"><meta property="og:title" content="Announcements – EXAM 100: The example course">
-<meta property="og:site_name" content="EXAM 100: The example course">
-<meta name="twitter:title" content="Announcements – EXAM 100: The example course">
+<link rel="alternate" type="application/rss+xml" title="{{< var course.full-title >}}" href="announcements.xml" data-external="1"><meta property="og:title" content="Announcements – CPSC XXX: A course template">
+<meta property="og:site_name" content="{{< var course.full-title >}}">
+<meta name="twitter:title" content="Announcements – CPSC XXX: A course template">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -336,7 +336,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">EXAM 100: The example course</a> 
+      <a href="./">CPSC XXX: A course template</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -407,13 +407,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://piazza.com/ubc.ca/winterterm12025/cpsc203" class="sidebar-item-text sidebar-link">
+  <a href="./<canvas-link>" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Piazza</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://us.prairielearn.com/pl/course_instance/193300" class="sidebar-item-text sidebar-link">
+  <a href="./<prairielearn-link>" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PrairieLearn</span></a>
   </div>
 </li>
@@ -570,7 +570,7 @@ window.Quarto = {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/<course-url>");
+        var filterRegex = new RegExp("https:\/\/stephan-koenig\.github\.io\/course-template\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -905,7 +905,7 @@ window.Quarto = {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://<repo-url>/blob/main/announcements.qmd" class="toc-action"><i class="bi bi-git"></i>View source</a></li><li><a href="https://<repo-url>/edit/main/announcements.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://<repo-url>/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions"><ul><li><a href="https://github.com/stephan-koenig/course-template/blob/main/announcements.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/stephan-koenig/course-template/edit/main/announcements.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/stephan-koenig/course-template/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>

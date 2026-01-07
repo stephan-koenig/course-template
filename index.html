@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>quarto-inputc21b89f2b67ebb9a – EXAM 100: The example course</title>
+<title>CPSC XXX: A course template</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -135,11 +135,11 @@ window.Quarto = {
 </script>
 
 <link rel="stylesheet" href="styles/styles.css">
-<meta property="og:title" content=" – EXAM 100: The example course">
-<meta property="og:description" content="Course website for EXAM 100">
-<meta property="og:site_name" content="EXAM 100: The example course">
-<meta name="twitter:title" content=" – EXAM 100: The example course">
-<meta name="twitter:description" content="Course website for EXAM 100">
+<meta property="og:title" content="CPSC XXX: A course template">
+<meta property="og:description" content="Course website for “CPSC XXX”">
+<meta property="og:site_name" content="{{< var course.full-title >}}">
+<meta name="twitter:title" content="CPSC XXX: A course template">
+<meta name="twitter:description" content="Course website for “CPSC XXX”">
 <meta name="twitter:card" content="summary">
 </head>
 
@@ -324,7 +324,7 @@ window.Quarto = {
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <a class="flex-grow-1 no-decor" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-          <h1 class="quarto-secondary-nav-title"><full-title></full-title></h1>
+          <h1 class="quarto-secondary-nav-title">CPSC XXX: A course template</h1>
         </a>     
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -338,7 +338,7 @@ window.Quarto = {
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">EXAM 100: The example course</a> 
+      <a href="./">CPSC XXX: A course template</a> 
         <div class="sidebar-tools-main">
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -409,13 +409,13 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://piazza.com/ubc.ca/winterterm12025/cpsc203" class="sidebar-item-text sidebar-link">
+  <a href="./<canvas-link>" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Piazza</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="https://us.prairielearn.com/pl/course_instance/193300" class="sidebar-item-text sidebar-link">
+  <a href="./<prairielearn-link>" class="sidebar-item-text sidebar-link">
  <span class="menu-text">PrairieLearn</span></a>
   </div>
 </li>
@@ -457,7 +457,7 @@ window.Quarto = {
   <ul>
   <li><a href="#weekly-announcement" id="toc-weekly-announcement" class="nav-link active" data-scroll-target="#weekly-announcement">Weekly announcement</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://<repo-url>/blob/main/index.qmd" class="toc-action"><i class="bi bi-git"></i>View source</a></li><li><a href="https://<repo-url>/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://<repo-url>/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/stephan-koenig/course-template/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/stephan-koenig/course-template/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/stephan-koenig/course-template/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -465,7 +465,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><full-title></full-title></h1>
+<h1 class="title d-none d-lg-block">CPSC XXX: A course template</h1>
 </div>
 
 
@@ -482,19 +482,19 @@ window.Quarto = {
 </header>
 
 
-<p><strong>Instructor:</strong> <full-name> (<pronouns>)<br>
-</pronouns></full-name></p>
+<p><strong>Instructor:</strong> Title First Last (they, them)<br>
+</p>
 <div class="columns">
 <div class="column" style="width:50%;">
 <p><strong>Contact</strong><br>
-<iconify-icon role="img" inline="" icon="fa6-solid:envelope" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon> <a href="mailto:%3Cemail%3E"><email></email></a><br>
+<iconify-icon role="img" inline="" icon="fa6-solid:envelope" aria-label="Icon envelope from fa6-solid Iconify.design set." title="Icon envelope from fa6-solid Iconify.design set."></iconify-icon> <a href="mailto:some.email@somewhere.ca">some.email@somewhere.ca</a><br>
 <iconify-icon role="img" inline="" icon="fa6-solid:clock" aria-label="Icon clock from fa6-solid Iconify.design set." title="Icon clock from fa6-solid Iconify.design set."></iconify-icon> Mon 2–4pm <a href="link">appointment</a><br>
 <iconify-icon role="img" inline="" icon="fa6-solid:building" aria-label="Icon building from fa6-solid Iconify.design set." title="Icon building from fa6-solid Iconify.design set."></iconify-icon> ICCS 233 · <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a></p>
 </div><div class="column" style="width:50%;">
 <p><strong>Class</strong><br>
-<days>, <start-time>–<end-time><br>
-<a href="map-link"><building-name></building-name></a><br>
-Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a></end-time></start-time></days></p>
+Days, start time–end time<br>
+Some building (code, <a href="https://maps.ubc.ca/?code=%3Ccode%3E">Wayfinding at UBC</a>, <a href="link">Google Maps</a>))<br>
+Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Zoom_Communications_Logo.svg" alt="Zoom" style="height:12px; vertical-align:middle;"></a></p>
 </div>
 </div>
 <section id="weekly-announcement" class="level2">
@@ -507,23 +507,23 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 </div>
 <div class="cell">
 <div class="cell-output-display">
-<div id="bbfuewauli" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>#bbfuewauli table {
+<div id="wqxriqdtnu" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>#wqxriqdtnu table {
   font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-#bbfuewauli thead, #bbfuewauli tbody, #bbfuewauli tfoot, #bbfuewauli tr, #bbfuewauli td, #bbfuewauli th {
+#wqxriqdtnu thead, #wqxriqdtnu tbody, #wqxriqdtnu tfoot, #wqxriqdtnu tr, #wqxriqdtnu td, #wqxriqdtnu th {
   border-style: none;
 }
 
-#bbfuewauli p {
+#wqxriqdtnu p {
   margin: 0;
   padding: 0;
 }
 
-#bbfuewauli .gt_table {
+#wqxriqdtnu .gt_table {
   display: table;
   border-collapse: collapse;
   line-height: normal;
@@ -549,12 +549,12 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-left-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_caption {
+#wqxriqdtnu .gt_caption {
   padding-top: 4px;
   padding-bottom: 4px;
 }
 
-#bbfuewauli .gt_title {
+#wqxriqdtnu .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -566,7 +566,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-width: 0;
 }
 
-#bbfuewauli .gt_subtitle {
+#wqxriqdtnu .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -578,7 +578,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-width: 0;
 }
 
-#bbfuewauli .gt_heading {
+#wqxriqdtnu .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -590,13 +590,13 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_bottom_border {
+#wqxriqdtnu .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_col_headings {
+#wqxriqdtnu .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -611,7 +611,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_col_heading {
+#wqxriqdtnu .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -631,7 +631,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#bbfuewauli .gt_column_spanner_outer {
+#wqxriqdtnu .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -643,15 +643,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 4px;
 }
 
-#bbfuewauli .gt_column_spanner_outer:first-child {
+#wqxriqdtnu .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bbfuewauli .gt_column_spanner_outer:last-child {
+#wqxriqdtnu .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bbfuewauli .gt_column_spanner {
+#wqxriqdtnu .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -663,11 +663,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   width: 100%;
 }
 
-#bbfuewauli .gt_spanner_row {
+#wqxriqdtnu .gt_spanner_row {
   border-bottom-style: hidden;
 }
 
-#bbfuewauli .gt_group_heading {
+#wqxriqdtnu .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -693,7 +693,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   text-align: left;
 }
 
-#bbfuewauli .gt_empty_group_heading {
+#wqxriqdtnu .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -708,15 +708,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: middle;
 }
 
-#bbfuewauli .gt_from_md > :first-child {
+#wqxriqdtnu .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bbfuewauli .gt_from_md > :last-child {
+#wqxriqdtnu .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bbfuewauli .gt_row {
+#wqxriqdtnu .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -735,7 +735,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   overflow-x: hidden;
 }
 
-#bbfuewauli .gt_stub {
+#wqxriqdtnu .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -748,7 +748,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#bbfuewauli .gt_stub_row_group {
+#wqxriqdtnu .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -762,15 +762,15 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   vertical-align: top;
 }
 
-#bbfuewauli .gt_row_group_first td {
+#wqxriqdtnu .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bbfuewauli .gt_row_group_first th {
+#wqxriqdtnu .gt_row_group_first th {
   border-top-width: 2px;
 }
 
-#bbfuewauli .gt_summary_row {
+#wqxriqdtnu .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -780,16 +780,16 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#bbfuewauli .gt_first_summary_row {
+#wqxriqdtnu .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_first_summary_row.thick {
+#wqxriqdtnu .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bbfuewauli .gt_last_summary_row {
+#wqxriqdtnu .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -799,7 +799,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_grand_summary_row {
+#wqxriqdtnu .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -809,7 +809,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#bbfuewauli .gt_first_grand_summary_row {
+#wqxriqdtnu .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -819,7 +819,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-top-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_last_grand_summary_row_top {
+#wqxriqdtnu .gt_last_grand_summary_row_top {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -829,11 +829,11 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_striped {
+#wqxriqdtnu .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bbfuewauli .gt_table_body {
+#wqxriqdtnu .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -842,7 +842,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-bottom-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_footnotes {
+#wqxriqdtnu .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -856,7 +856,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_footnote {
+#wqxriqdtnu .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-top: 4px;
@@ -865,7 +865,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#bbfuewauli .gt_sourcenotes {
+#wqxriqdtnu .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -879,7 +879,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   border-right-color: #D3D3D3;
 }
 
-#bbfuewauli .gt_sourcenote {
+#wqxriqdtnu .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -887,72 +887,72 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
   padding-right: 5px;
 }
 
-#bbfuewauli .gt_left {
+#wqxriqdtnu .gt_left {
   text-align: left;
 }
 
-#bbfuewauli .gt_center {
+#wqxriqdtnu .gt_center {
   text-align: center;
 }
 
-#bbfuewauli .gt_right {
+#wqxriqdtnu .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bbfuewauli .gt_font_normal {
+#wqxriqdtnu .gt_font_normal {
   font-weight: normal;
 }
 
-#bbfuewauli .gt_font_bold {
+#wqxriqdtnu .gt_font_bold {
   font-weight: bold;
 }
 
-#bbfuewauli .gt_font_italic {
+#wqxriqdtnu .gt_font_italic {
   font-style: italic;
 }
 
-#bbfuewauli .gt_super {
+#wqxriqdtnu .gt_super {
   font-size: 65%;
 }
 
-#bbfuewauli .gt_footnote_marks {
+#wqxriqdtnu .gt_footnote_marks {
   font-size: 75%;
   vertical-align: 0.4em;
   position: initial;
 }
 
-#bbfuewauli .gt_asterisk {
+#wqxriqdtnu .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bbfuewauli .gt_indent_1 {
+#wqxriqdtnu .gt_indent_1 {
   text-indent: 5px;
 }
 
-#bbfuewauli .gt_indent_2 {
+#wqxriqdtnu .gt_indent_2 {
   text-indent: 10px;
 }
 
-#bbfuewauli .gt_indent_3 {
+#wqxriqdtnu .gt_indent_3 {
   text-indent: 15px;
 }
 
-#bbfuewauli .gt_indent_4 {
+#wqxriqdtnu .gt_indent_4 {
   text-indent: 20px;
 }
 
-#bbfuewauli .gt_indent_5 {
+#wqxriqdtnu .gt_indent_5 {
   text-indent: 25px;
 }
 
-#bbfuewauli .katex-display {
+#wqxriqdtnu .katex-display {
   display: inline-flex !important;
   margin-bottom: 0.75em !important;
 }
 
-#bbfuewauli div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
+#wqxriqdtnu div.Reactable > div.rt-table > div.rt-thead > div.rt-tr.rt-tr-group-header > div.rt-th-group:after {
   height: 0px !important;
 }
 </style>
@@ -1329,7 +1329,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp("https:\/\/<course-url>");
+        var filterRegex = new RegExp("https:\/\/stephan-koenig\.github\.io\/course-template\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -1664,7 +1664,7 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://<repo-url>/blob/main/index.qmd" class="toc-action"><i class="bi bi-git"></i>View source</a></li><li><a href="https://<repo-url>/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://<repo-url>/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/stephan-koenig/course-template/blob/main/index.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li><li><a href="https://github.com/stephan-koenig/course-template/edit/main/index.qmd" class="toc-action"><i class="bi empty"></i>Edit this page</a></li><li><a href="https://github.com/stephan-koenig/course-template/issues/new" class="toc-action"><i class="bi empty"></i>Report an issue</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>UBC’s Point Grey Campus is located on the traditional, ancestral, and unceded territory of the <a href="https://www.musqueam.bc.ca/">xʷməθkʷəy̓ə (Musqueam)</a> people.</p>
 </div>
