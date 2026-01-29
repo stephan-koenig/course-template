@@ -7,8 +7,8 @@ course:
   time: "Days, start time--end time"
   website: "https://stephan-koenig.github.io/course-template"
   repo: "https://github.com/stephan-koenig/course-template"
-  lms: "<link>"
-  prairielearn: "<link>"
+  lms: "https://canvas.ubc.ca/courses/<link>"
+  prairielearn: "https://us.prairielearn.com/pl/course_instance/<link>"
 instructor:
   name: "Title First Last"
   pronouns: "they, them"

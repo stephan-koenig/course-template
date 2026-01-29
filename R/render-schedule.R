@@ -2,6 +2,7 @@ library(conflicted)
 library(dplyr)
 conflicts_prefer(dplyr::filter)
 library(fontawesome)
+library(forcats)
 library(fs)
 library(glue)
 library(gt)
@@ -13,93 +14,136 @@ library(stringr)
 library(tidyr)
 
 render_schedule <- function() {
+  current_date <- today()
+
+  # Used to sort column names when using `pivot_wider()`
+  sorted_types <- c(
+    "summaries",
+    "pre_activities",
+    "slides",
+    "activities",
+    "recording",
+    "link",
+    "practice"
+  )
+  sorted_units <- c("summary", "class", "potw", "lab", "exam")
+
+  single_resource_units <- c("summary", "potw", "lab")
+
   # Generate ids for each link to join into schedule
   resources_paths <-
     c(
       path("pre-activities"),
       path("activities"),
-      path("labs"),
       path("slides"),
       path("summaries")
     )
 
+  schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE)
+  sections <- read_csv(here("data", "sections.csv"), show_col_types = FALSE)
+  additional_resources <- read_csv(
+    here("data", "additional-resources.csv"),
+    show_col_types = FALSE
+  )
+
   resources <-
     tibble(
-      path = dir_ls(resources_paths, glob = "*.qmd"),
-      week = path |> path_file() |> str_extract("^(\\d+).*$", group = 1),
-      day = path |>
-        path_file() |>
-        str_extract("\\d+_([:alpha:]+)_.*$", group = 1),
-      type = path |>
+      resource = dir_ls(resources_paths, glob = "*.qmd"),
+      id = path_file(resource) |> str_extract("^[^_]+"),
+      type = resource |>
         path_dir() |>
         str_replace("-", "_")
     ) |>
     # Remove unassigned resources indicated by "tbd"
-    filter(!str_detect(path, "tbd")) |>
-    select(week, type, day, path) |>
-    pivot_wider(names_from = c(day, type), names_sep = "_", values_from = path)
+    filter(!str_detect(resource, "tbd")) |>
+    relocate(resource, .after = type)
 
-  current_date <- today()
+  all_resources <- bind_rows(resources, additional_resources) |>
+    mutate(type = fct(type, levels = intersect(sorted_types, type))) |>
+    arrange(type)
 
-  schedule <- read_csv(here("data", "schedule.csv"), show_col_types = FALSE) |>
-    left_join(resources, by = join_by(week), na_matches = "never") |>
-    relocate(
-      tue_pre_activities,
-      tue_slides,
-      tue_activities,
-      .before = tue_video
-    ) |>
-    relocate(
-      thu_pre_activities,
-      thu_slides,
-      thu_activities,
-      .before = thu_video
-    ) |>
-    relocate(weekly_labs, .before = potw) |>
+  detailed_schedule <- schedule |>
     mutate(
-      saturday_before = floor_date(
-        date,
-        unit = "week",
-        week_start = "Sat"
-      ),
-      show_week = case_when(
-        # Show at least the first week in schedule
-        date == min(date) ~ TRUE,
-        # Show upcoming week on the Saturday before
-        saturday_before <= current_date ~ TRUE,
-        .default = FALSE
-      ),
-      upcoming_exam_due = exam_due
+      week = date |> isoweek() |> consecutive_id(),
+      monday = floor_date(date, unit = "week", week_start = "Mon"),
+      current_week = isoweek(date) == isoweek(current_date),
+      show_week = isoweek(date) >= isoweek(current_date),
+      day = wday(date, label = TRUE, week_start = "Mon") |> str_to_lower(),
+      unit = id |> str_extract("^[^-]+"),
+      # Only use levels present in data
+      unit = unit |> fct(levels = intersect(sorted_units, unit)),
+      next_exam = if_else(unit == "exam", date, NA),
+      show_exam = between(next_exam, current_date, current_date + days(13)),
+      .after = date
     ) |>
-    fill(upcoming_exam_due, .direction = "up") |>
-    mutate(
-      exam_due_within_12_days = upcoming_exam_due <= current_date + days(12)
+    fill(next_exam, show_exam, .direction = "up") |>
+    left_join(
+      sections,
+      by = join_by(closest(date >= start_date)),
+      relationship = "many-to-one"
+    ) |>
+    left_join(
+      all_resources,
+      by = join_by(id),
+      relationship = "one-to-many"
     )
 
-  schedule |>
+  weeks <- detailed_schedule |>
+    distinct(week, monday, current_week, show_week, show_exam)
+
+  classes <- detailed_schedule |>
+    filter(unit == "class", !is.na(resource)) |>
+    select(week, day, unit, type, resource) |>
+    pivot_wider(
+      names_from = c(day, unit, type),
+      names_sep = "_",
+      values_from = resource
+    )
+
+  # Units with only a single resource
+  other_units <- detailed_schedule |>
+    filter(unit %in% single_resource_units, !is.na(resource)) |>
+    select(week, unit, resource) |>
+    pivot_wider(names_from = unit, values_from = resource)
+
+  exams <- detailed_schedule |>
+    filter(unit == "exam", !is.na(resource)) |>
+    mutate(exam = id |> str_replace("-", " ") |> str_to_title()) |>
+    select(week, exam, exam_due = date, exam_practice = resource)
+
+  weekly_schedule <- weeks |>
+    left_join(
+      classes,
+      by = join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    left_join(
+      other_units,
+      by = join_by(week),
+      relationship = "one-to-one"
+    ) |>
+    left_join(exams, by = join_by(week), relationship = "one-to-one")
+
+  weekly_schedule |>
     mutate(
       week = if_else(
-        !is.na(weekly_summaries),
-        glue("[{week} {fa('circle-info')}]({weekly_summaries})"),
-        week
+        !is.na(summary),
+        glue("[{week} {fa('circle-info')}]({summary})"),
+        as.character(week)
       ),
-      # Show only resources for exams due within 12 days or before
       exam = if_else(
-        exam_due_within_12_days,
+        show_exam,
         glue("[{exam}](https://us.prairietest.com)", .na = NULL),
         exam
       ),
       exam_practice = if_else(
-        exam_due_within_12_days,
+        show_exam | (show_week),
         exam_practice,
         NA
       ),
       # Remove any resources from future weeks
       across(
-        c(
-          starts_with(c("tue", "thu", "lab", "potw")),
-          weekly_labs
-        ),
+        c(starts_with(c("tue", "thu")), lab, potw),
         \(column) if_else(show_week, column, NA)
       )
     ) |>
@@ -108,11 +152,11 @@ render_schedule <- function() {
     ) |>
     fmt_url(
       columns = week,
-      rows = !is.na(weekly_summaries),
+      rows = !is.na(summary),
       show_underline = FALSE
     ) |>
     fmt_date(
-      date,
+      monday,
       date_style = "MMMd"
     ) |>
     sub_missing(
@@ -143,19 +187,19 @@ render_schedule <- function() {
       missing_text = fa("book", fill_opacity = 0.1)
     ) |>
     fmt_url(
-      columns = ends_with("video"),
+      columns = ends_with("recording"),
       label = fa("circle-play")
     ) |>
     sub_missing(
-      columns = ends_with("video"),
+      columns = ends_with("recording"),
       missing_text = fa("circle-play", fill_opacity = 0.1)
     ) |>
     fmt_url(
-      columns = weekly_labs,
+      columns = lab,
       label = fa("laptop-code")
     ) |>
     sub_missing(
-      columns = weekly_labs,
+      columns = lab,
       missing_text = fa("laptop-code", fill_opacity = 0.1)
     ) |>
     fmt_url(
@@ -166,21 +210,21 @@ render_schedule <- function() {
       columns = potw,
       missing_text = fa("calendar-week", fill_opacity = 0.1)
     ) |>
-    fmt_url(
-      columns = project,
-      label = fa("list-check")
-    ) |>
-    sub_missing(
-      columns = project,
-      missing_text = fa("clipboard-list", fill_opacity = 0.1)
-    ) |>
-    fmt_date(
-      project_due,
-      date_style = "MMMd"
-    ) |>
+    # fmt_url(
+    #   columns = project,
+    #   label = fa("list-check")
+    # ) |>
+    # sub_missing(
+    #   columns = project,
+    #   missing_text = fa("clipboard-list", fill_opacity = 0.1)
+    # ) |>
+    # fmt_date(
+    #   project_due,
+    #   date_style = "MMMd"
+    # ) |>
     fmt_url(
       columns = exam,
-      rows = exam_due_within_12_days,
+      rows = show_exam,
       show_underline = FALSE
     ) |>
     fmt_date(
@@ -191,25 +235,21 @@ render_schedule <- function() {
       columns = exam_practice,
       label = fa("pen-to-square")
     ) |>
-    sub_missing(
-      columns = exam_practice,
-      missing_text = fa("pen-to-square", fill_opacity = 0.1)
-    ) |>
     cols_label(
       week = "Week",
-      date = "Mon",
-      tue_pre_activities = "P",
-      tue_slides = "S",
-      tue_activities = "A",
-      tue_video = "V",
-      thu_pre_activities = "P",
-      thu_slides = "S",
-      thu_activities = "A",
-      thu_video = "V",
-      weekly_labs = "Lab",
+      monday = "Mon",
+      tue_class_pre_activities = "P",
+      tue_class_slides = "S",
+      tue_class_activities = "A",
+      tue_class_recording = "V",
+      thu_class_pre_activities = "P",
+      thu_class_slides = "S",
+      thu_class_activities = "A",
+      thu_class_recording = "V",
+      lab = "Lab",
       potw = "POTW",
-      project = "Guide",
-      project_due = "Due",
+      # project = "Guide",
+      # project_due = "Due",
       exam = "Book",
       exam_due = "Due",
       exam_practice = "Practice"
@@ -222,17 +262,17 @@ render_schedule <- function() {
       label = "Thu",
       columns = starts_with("thu")
     ) |>
-    tab_spanner(
-      label = "Project",
-      columns = starts_with("project")
-    ) |>
+    # tab_spanner(
+    #   label = "Project",
+    #   columns = starts_with("project")
+    # ) |>
     tab_spanner(
       label = "Examlet",
       columns = c(exam, exam_due, exam_practice)
     ) |>
     cols_align(
       align = "center",
-      columns = c(weekly_labs, potw, exam_practice)
+      columns = c(lab, potw, exam_practice)
     ) |>
     tab_style(
       style = list(
@@ -246,17 +286,15 @@ render_schedule <- function() {
       )
     ) |>
     gt_highlight_rows(
-      row = date == floor_date(current_date, unit = "week", week_start = "Mon"),
+      row = current_week,
       fill = "#ccefff"
     ) |>
     cols_hide(
       c(
-        part,
-        weekly_summaries,
-        saturday_before,
+        summary,
+        current_week,
         show_week,
-        upcoming_exam_due,
-        exam_due_within_12_days
+        show_exam
       )
     ) |>
     tab_options(

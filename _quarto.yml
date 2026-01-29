@@ -49,9 +49,9 @@ website:
             text: "Getting started"
           - href: setup.qmd
             text: "Setup"
-          - href: "https://canvas.ubc.ca/courses/170624"
+          - href: "https://canvas.ubc.ca/courses/<link>"
             text: "Canvas"
-          - href: "<canvas-link>"
+          - href: "<piazza-link>"
             text: "Piazza"
           - href: "<prairielearn-link>"
             text: "PrairieLearn"
