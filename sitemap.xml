@@ -1,83 +1,83 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://stephan-koenig.github.io/course-template/announcements.html</loc>
-    <lastmod>2026-02-10T20:54:20.328Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/activities/class-02_activity.html</loc>
-    <lastmod>2026-02-10T20:54:20.328Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/syllabus.html</loc>
-    <lastmod>2026-02-10T20:54:20.431Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/formatting.html</loc>
-    <lastmod>2026-02-10T20:54:20.328Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/pre-activities/class-02_pre-activity.html</loc>
-    <lastmod>2026-02-10T20:54:20.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/slides/class-01_slides.html</loc>
-    <lastmod>2026-02-10T20:54:20.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/setup.html</loc>
-    <lastmod>2026-02-10T20:54:20.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/lesson-plans/lab-01_lesson-plan.html</loc>
-    <lastmod>2026-02-10T20:54:20.429Z</lastmod>
-  </url>
-  <url>
     <loc>https://stephan-koenig.github.io/course-template/faq.html</loc>
-    <lastmod>2026-02-10T20:54:20.328Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/LICENSE.html</loc>
-    <lastmod>2026-02-10T20:54:20.316Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/index.html</loc>
-    <lastmod>2026-02-10T20:54:20.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/lesson-plans/class-01_lesson-plan.html</loc>
-    <lastmod>2026-02-10T20:54:20.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/lesson-plans/class-02_lesson-plan.html</loc>
-    <lastmod>2026-02-10T20:54:20.429Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/summaries/summary-01_page.html</loc>
-    <lastmod>2026-02-10T20:54:20.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://stephan-koenig.github.io/course-template/about.html</loc>
-    <lastmod>2026-02-10T20:54:20.327Z</lastmod>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
   </url>
   <url>
     <loc>https://stephan-koenig.github.io/course-template/slides/class-02_slides.html</loc>
-    <lastmod>2026-02-10T20:54:20.430Z</lastmod>
+    <lastmod>2026-02-13T20:22:46.094Z</lastmod>
   </url>
   <url>
-    <loc>https://stephan-koenig.github.io/course-template/pre-activities/class-01_pre-activity.html</loc>
-    <lastmod>2026-02-10T20:54:20.429Z</lastmod>
+    <loc>https://stephan-koenig.github.io/course-template/formatting.html</loc>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
   </url>
   <url>
-    <loc>https://stephan-koenig.github.io/course-template/getting-started.html</loc>
-    <lastmod>2026-02-10T20:54:20.328Z</lastmod>
+    <loc>https://stephan-koenig.github.io/course-template/lesson-plans/class-02_lesson-plan.html</loc>
+    <lastmod>2026-02-13T20:22:46.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/lesson-plans/lab-01_lesson-plan.html</loc>
+    <lastmod>2026-02-13T20:22:46.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/pre-activities/class-02_pre-activity.html</loc>
+    <lastmod>2026-02-13T20:22:46.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/activities/class-02_activity.html</loc>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
   </url>
   <url>
     <loc>https://stephan-koenig.github.io/course-template/activities/lab-01_activity.html</loc>
-    <lastmod>2026-02-10T20:54:20.328Z</lastmod>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/LICENSE.html</loc>
+    <lastmod>2026-02-13T20:22:45.981Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/getting-started.html</loc>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/index.html</loc>
+    <lastmod>2026-02-13T20:22:46.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/syllabus.html</loc>
+    <lastmod>2026-02-13T20:22:46.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/setup.html</loc>
+    <lastmod>2026-02-13T20:22:46.094Z</lastmod>
   </url>
   <url>
     <loc>https://stephan-koenig.github.io/course-template/activities/class-01_activity.html</loc>
-    <lastmod>2026-02-10T20:54:20.328Z</lastmod>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/pre-activities/class-01_pre-activity.html</loc>
+    <lastmod>2026-02-13T20:22:46.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/announcements.html</loc>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/lesson-plans/class-01_lesson-plan.html</loc>
+    <lastmod>2026-02-13T20:22:46.093Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/summaries/summary-01_page.html</loc>
+    <lastmod>2026-02-13T20:22:46.094Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/about.html</loc>
+    <lastmod>2026-02-13T20:22:45.993Z</lastmod>
+  </url>
+  <url>
+    <loc>https://stephan-koenig.github.io/course-template/slides/class-01_slides.html</loc>
+    <lastmod>2026-02-13T20:22:46.094Z</lastmod>
   </url>
 </urlset>
