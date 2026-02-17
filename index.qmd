@@ -38,7 +38,14 @@ Livestream <a href="<link>"><img src="https://upload.wikimedia.org/wikipedia/com
 #| label: schedule
 #| echo: false
 #| message: false
+#| renderings: [light, dark]
+
+light_theme <- quarto::theme_brand_gt("light-brand.yml")
+dark_theme <- quarto::theme_brand_gt("dark-brand.yml")
 
 source(here::here("R", "render-schedule.R"))
-render_schedule()
+schedule <- render_schedule()
+
+schedule |> light_theme()
+schedule |> dark_theme()
 ```
