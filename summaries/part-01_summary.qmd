@@ -1,0 +1,10 @@
+---
+title: "Introduction"
+subtitle: "Part I, {{< var course.code >}}, {{< var course.term >}}"
+---
+
+## Learning outcomes
+
+Students will be able to:
+
+{{< include /_includes/learning-outcomes/_part-01_learning-outcomes.qmd >}}

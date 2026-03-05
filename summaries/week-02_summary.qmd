@@ -1,0 +1,4 @@
+---
+title: "Summary"
+subtitle: "Week 2, {{< var course.code >}}, {{< var course.term >}}"
+---

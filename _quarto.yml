@@ -2,12 +2,11 @@ project:
   preview:
     port: 4200
   type: website
-  output-dir: _site
 
 website:
   title: "{{< var course.full-title >}}"
   description: >
-    Course website for "{{< var course.code >}}"
+    Course website for {{< var course.code >}}
   open-graph: true
   twitter-card: true
   site-url: "https://stephan-koenig.github.io/course-template/"

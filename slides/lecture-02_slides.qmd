@@ -1,0 +1,13 @@
+---
+title: "Second lecture"
+subtitle: "Lecture 2, {{< var course.code >}}, {{< var course.term >}}"
+date: 2026-09-10
+---
+
+## Announcements
+
+::: notes
+Presentation notes
+:::
+
+## Learning outcomes

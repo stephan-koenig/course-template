@@ -1,0 +1,5 @@
+---
+title: "Second lecture"
+subtitle: >
+  Lecture 2 lesson plan, {{< var course.code >}}, {{< var course.term >}}
+---

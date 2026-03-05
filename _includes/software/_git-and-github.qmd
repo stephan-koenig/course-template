@@ -30,7 +30,7 @@ git --version
 
 You should see something like this if everything is working correctly:
 
-```         
+```
 git version {{< var software.git >}}
 ```
 
@@ -74,7 +74,7 @@ This is a bit tricky, so please make sure you follow these directions carefully.
 
 -   Give the token a name in the note field, for example, `{{< var course.code >}}`
 
--   Choose for expiration "Custom" and set the date to the end of this term: {{< var course.term-end-date >}}
+-   Choose for expiration "Custom" and set the date to the end of this term: {{< var course.exams-finish-date >}}
 
 -   Set the scope of the token to the "repo" level (see image below):
 
@@ -106,8 +106,8 @@ We will be talking more about what exactly you did over the next week and a bit,
 ::: callout-tip
 If after running the code above, you see the error message:
 
-```         
-fatal: destination path 'test' already exists and is not an empty directory. 
+```
+fatal: destination path 'test' already exists and is not an empty directory.
 ```
 
 It means that you already attempted a clone before, and there is already a directory called `test` where you are trying to clone this repository.

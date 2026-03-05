@@ -1,5 +1,7 @@
 ---
-date: 2025-09-09
+title: "First lecture"
+subtitle: "Lecture 1, {{< var course.code >}}, {{< var course.term >}}"
+date: 2026-09-08
 ---
 
 # Introductions
