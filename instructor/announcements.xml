@@ -10,7 +10,7 @@
 <atom:link href="https://stephan-koenig.github.io/course-template/announcements.xml" rel="self" type="application/rss+xml"/>
 <description>Course website for {{&lt; var course.code &gt;}}
 </description>
-<generator>quarto-1.9.38</generator>
-<lastBuildDate>Tue, 21 Jul 2026 20:52:35 GMT</lastBuildDate>
+<generator>quarto-1.10.18</generator>
+<lastBuildDate>Sat, 25 Jul 2026 12:15:40 GMT</lastBuildDate>
 </channel>
 </rss>
